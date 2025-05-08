@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sjpnexhtq-nodejs-gitops
+  description: This is GitOps manifest for sjpnexhtq-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=sjpnexhtq-nodejs
+    backstage.io/kubernetes-id: sjpnexhtq-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: sjpnexhtq-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sjpnexhtq-nodejs
